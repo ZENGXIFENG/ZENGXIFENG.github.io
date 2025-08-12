@@ -26,20 +26,23 @@
             .text-shadow {
                 text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             }
+            .no-wrap {
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-1 bg-transparent m-0">
     <div class="w-full max-w-md bg-transparent p-1 md:p-2 text-center">
         <!-- 时间显示 -->
-        <div class="mb-0.5"> <!-- 几乎消除时间与日期的间距 -->
+        <div class="mb-0.5">
             <span id="time" class="text-[clamp(2.5rem,8vw,4rem)] font-mono font-bold text-primary text-shadow"></span>
         </div>
         
-        <!-- 日期和星期显示 -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1.5"> <!-- 最小化日期和星期的间距 -->
-            <span id="date" class="text-[clamp(1.2rem,3vw,1.8rem)] text-white text-shadow"></span>
-            <span id="weekday" class="text-white/80 text-base md:text-lg text-shadow"></span>
+        <!-- 日期和星期显示（强制同一行） -->
+        <div class="flex items-center justify-center gap-1.5 whitespace-nowrap overflow-hidden">
+            <span id="date" class="text-[clamp(1.2rem,3vw,1.8rem)] text-white text-shadow no-wrap"></span>
+            <span id="weekday" class="text-white/80 text-base md:text-lg text-shadow no-wrap"></span>
         </div>
     </div>
 
